@@ -1,0 +1,10 @@
+1  ls
+2  mkdir ~/week1
+3  ls
+4  cd ~/week1
+5  ls -r /usr/bin | grep 'gcc' > ex1.txt
+6  apt-get install vim
+7  apt-get update
+8  apt-get install vim
+9  omw lmao docker shell amazing lol
+10  history > ex2.txt
