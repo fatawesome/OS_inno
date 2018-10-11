@@ -1,0 +1,3 @@
+Physical address means that program knows the actual address in RAM, 
+when virtual means that program needs to access page table,
+which will map from the virtual to physical addresses.
