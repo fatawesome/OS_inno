@@ -1,0 +1,9 @@
+LOL that's ez one.
+
+To increase hit rate and descreas miss rate just make as much
+equal references in a row as possible.
+To decrease hit rate and increase miss rate do the opposite.
+
+Also the good idea is to make the interval between equal
+references less than page frames we have. So algorithm will not
+unload desired reference earlier than we need it.
