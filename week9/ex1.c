@@ -73,13 +73,6 @@ int handleReference(int reference, PageFrame *array, int size) {
     return res;
 }
 
-int printPages(PageFrame *array, int size) {
-    for (int i = 0; i < size; i++) {
-        printf("Page %d. timeline: %d, reference: %d\n", i, array[i].timeline, array[i].reference);
-    }
-    return 0;
-}
-
 int main(int argc, char **argv) {
     int pageFrameCount = atoi(argv[1]);
     PageFrame *pageArray = malloc(sizeof(PageFrame) * pageFrameCount);
@@ -94,15 +87,16 @@ int main(int argc, char **argv) {
         pageArray[i].free = 1;
     }
 
-    // printPages(pageArray, pageFrameCount);
-
     int buffer;
+    int len = 0;
     while (fscanf(file, "%d", &buffer) == 1) {
+        len++;
         missCount = missCount + handleReference(buffer, pageArray, pageFrameCount);
-        printPages(pageArray, pageFrameCount);
-        printf("\n");
     }
 
-    printf("%d\n", missCount);
+    float missRatio = (float)missCount / len;
+    float hitRatio = 1 - missRatio;
+    printf("%d %d\n", missCount, len);
+    printf("Miss ratio: %f\nHit ratio: %f\n", missRatio, hitRatio);
     return 0;
 }
