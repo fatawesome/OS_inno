@@ -1,0 +1,9 @@
+$ link ../week1/file.txt _ex2.txt
+
+$ find ../week1/file.txt -inum 8606514729
+../week1/file.txt
+
+$ find ../week1/file.txt -inum 8606514729 -exec rm {} \;
+
+$ find ../week1/file.txt -inum 8606514729
+find: ../week1/file.txt: No such file or directory
