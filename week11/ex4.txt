@@ -1,0 +1,10 @@
+ex3_1.c will output 'Hello' twice,
+because fork() is copying the address space
+into the forked process, thus sharing the buffer
+between the two processes.
+
+The buffer won't be empty because the default
+behaviour of the it is to flush either
+on a line break or when the buffer is overflowed,
+so inserting a \n in the ex3_2.c
+gives the expected behaviour.
